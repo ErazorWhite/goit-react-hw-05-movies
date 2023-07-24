@@ -13,16 +13,18 @@ export const getTrendingMovies = async () => {
     const { data } = await tmdbApi.get('/trending/all/day');
     return data['results'];
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
   }
 };
 
-export const getMoviesBySearchQuery = async (searchQuery) => {
+export const getMoviesBySearchQuery = async searchQuery => {
   try {
-    const { data } = await tmdbApi.get('/search/movie', {params: { query: searchQuery }});
+    const { data } = await tmdbApi.get('/search/movie', {
+      params: { query: searchQuery },
+    });
     return data['results'];
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
   }
 };
 
@@ -32,6 +34,6 @@ export const getMovieById = async (id, extra) => {
     const { data } = await tmdbApi.get(query);
     return data;
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
   }
 };

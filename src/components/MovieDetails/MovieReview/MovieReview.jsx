@@ -16,7 +16,7 @@ export const MovieReview = () => {
         const movieCast = await getMovieById(id, 'reviews');
         setMovieReviews(movieCast['results']);
       } catch (e) {
-        console.log(e);
+        console.log(e.message);
       } finally {
         setIsLoading(false);
       }

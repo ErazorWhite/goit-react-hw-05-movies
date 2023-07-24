@@ -17,7 +17,7 @@ export const MovieCredits = () => {
         const movieCast = await getMovieById(id, 'credits');
         setMovieCast(movieCast['cast']);
       } catch (e) {
-        console.log(e);
+        console.log(e.message);
       } finally {
         setIsLoading(false);
       }

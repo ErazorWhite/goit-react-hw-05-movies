@@ -10,6 +10,11 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const search = searchParams.get('search') ?? '';
 
+  const updateQueryString = search => {
+    const nextParams = search !== '' ? { search } : {};
+    setSearchParams(nextParams);
+  };
+
   useEffect(() => {
     setIsLoading(true);
     const asyncWrapper = async searchQuery => {
@@ -17,7 +22,7 @@ const Movies = () => {
         const searchMoviesResult = await getMoviesBySearchQuery(searchQuery);
         setMovies(searchMoviesResult);
       } catch (e) {
-        console.log(e);
+        console.log(e.message);
       } finally {
         setIsLoading(false);
       }
@@ -27,8 +32,8 @@ const Movies = () => {
 
   return (
     <Section>
+      <SearchForm onSearch={updateQueryString} />
       {isLoading && <div>LOADING ...</div>}
-      <SearchForm />
       <MoviesList movies={movies} />
     </Section>
   );
