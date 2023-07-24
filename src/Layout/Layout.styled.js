@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const StyledUl = styled.ul`
   list-style: none;
@@ -12,4 +13,8 @@ export const StyledLi = styled.li`
   &:focus {
     background-color: darkcyan;
   }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  padding: 20px 20px;
 `;

@@ -17,9 +17,19 @@ export const getTrendingMovies = async () => {
   }
 };
 
-export const getMovieById = async id => {
+export const getMoviesBySearchQuery = async (searchQuery) => {
   try {
-    const { data } = await tmdbApi.get(`/movie/${id}`);
+    const { data } = await tmdbApi.get('/search/movie', {params: { query: searchQuery }});
+    return data['results'];
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getMovieById = async (id, extra) => {
+  try {
+    const query = extra ? `/movie/${id}/${extra}` : `/movie/${id}`;
+    const { data } = await tmdbApi.get(query);
     return data;
   } catch (e) {
     console.log(e);

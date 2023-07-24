@@ -3,7 +3,7 @@ import { getTrendingMovies } from 'api/tmdbAPI';
 import { Section } from 'components/Section/Section';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,8 +24,10 @@ export const Home = () => {
 
   return (
     <Section title="Tranding movies">
-      {isLoading && <div>ЗАГРУЗКА</div>}
+      {isLoading && <div>LOADING ...</div>}
       <MoviesList movies={movies} />
     </Section>
   );
 };
+
+export default Home;

@@ -12,7 +12,7 @@ export const MovieItem = ({ id, name, title, overview, poster_path }) => {
     : defaultPhoto;
 
   return (
-    <StyledLi>
+    <StyledLi>  
       <StyledLink to={`/movies/${id}`}>
         <h2>{name ?? title}</h2>
         <MovieThumb>

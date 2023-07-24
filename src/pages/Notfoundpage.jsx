@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-export const NotFoundpage = () => (
+const NotFoundpage = () => (
   <div>
     Oops, not found. Go <NavLink to="/">home</NavLink>
   </div>
 );
+
+export default NotFoundpage;

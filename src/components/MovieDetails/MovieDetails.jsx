@@ -1,4 +1,5 @@
 import defaultPhoto from 'images/comingSoon_200x300.jpg';
+import { Link, Outlet } from 'react-router-dom';
 import {
   MovieContainter,
   MovieDetailsList,
@@ -42,9 +43,14 @@ export const MovieDetails = ({
       <div>
         <p>Additional information:</p>
         <ul>
-          <li>Cast</li>
-          <li>Review</li>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="review">Review</Link>
+          </li>
         </ul>
+        <Outlet />
       </div>
     </>
   );

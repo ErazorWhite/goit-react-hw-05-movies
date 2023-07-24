@@ -1,5 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import { Main } from './Layout.styled';
+import { Outlet } from 'react-router-dom';
+import { StyledNavLink } from './Layout.styled';
 import { StyledUl, StyledLi } from 'Layout/Layout.styled';
 export const Layout = () => (
   <>
@@ -7,10 +7,10 @@ export const Layout = () => (
       <nav className="container">
         <StyledUl>
           <StyledLi>
-            <NavLink to="/">Home</NavLink>
+            <StyledNavLink to="/">Home</StyledNavLink>
           </StyledLi>
           <StyledLi>
-            <NavLink to="/movies">Movies</NavLink>
+            <StyledNavLink to="/movies">Movies</StyledNavLink>
           </StyledLi>
         </StyledUl>
       </nav>
