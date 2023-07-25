@@ -7,13 +7,14 @@ import {
   Text,
 } from './MovieDetails.styled';
 import { Suspense } from 'react';
+import PropTypes from 'prop-types';
 
 export const MovieDetails = ({
   details: { title, release_date, poster_path, vote_average, overview, genres },
 }) => {
   const posterImage = poster_path
-  ? `https://image.tmdb.org/t/p/w200/${poster_path}`
-  : defaultPhoto;
+    ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+    : defaultPhoto;
 
   const releaseDateNormalized = release_date
     ? `(${new Date(release_date).getFullYear()})`
@@ -57,4 +58,13 @@ export const MovieDetails = ({
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string,
+  poster_path: PropTypes.string,
+  vote_average: PropTypes.string,
+  overview: PropTypes.string,
+  genres: PropTypes.string,
 };

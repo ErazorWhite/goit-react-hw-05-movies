@@ -4,6 +4,7 @@ import { SearchForm } from 'components/SearchForm/SearchForm';
 import { Section } from 'components/Section/Section';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);

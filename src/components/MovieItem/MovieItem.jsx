@@ -6,6 +6,7 @@ import {
   MovieOverview,
 } from './MovieItem.styled';
 import defaultPhoto from 'images/comingSoon_200x300.jpg';
+import PropTypes from 'prop-types';
 
 export const MovieItem = ({ id, name, title, overview, poster_path }) => {
   const location = useLocation();
@@ -24,4 +25,12 @@ export const MovieItem = ({ id, name, title, overview, poster_path }) => {
       </StyledLink>
     </StyledLi>
   );
+};
+
+MovieItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  overview: PropTypes.string,
+  poster_path: PropTypes.string,
 };

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getMovieById } from 'api/tmdbAPI';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { Section } from 'components/Section/Section';
+
 const Movieid = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [movieDetails, setMovieDetails] = useState({});
