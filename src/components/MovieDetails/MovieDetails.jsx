@@ -6,13 +6,14 @@ import {
   H2,
   Text,
 } from './MovieDetails.styled';
+import { Suspense } from 'react';
 
 export const MovieDetails = ({
   details: { title, release_date, poster_path, vote_average, overview, genres },
 }) => {
   const posterImage = poster_path
-    ? `https://image.tmdb.org/t/p/w200/${poster_path}`
-    : defaultPhoto;
+  ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+  : defaultPhoto;
 
   const releaseDateNormalized = release_date
     ? `(${new Date(release_date).getFullYear()})`
@@ -50,7 +51,9 @@ export const MovieDetails = ({
             <Link to="review">Review</Link>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<div>LOADING SUBPAGE...</div>}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );

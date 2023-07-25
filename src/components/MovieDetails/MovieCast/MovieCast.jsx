@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Ul } from './MovieCast.styled';
 
-export const MovieCredits = () => {
+const MovieCredits = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [movieCast, setMovieCast] = useState([]);
   const { id } = useParams();
@@ -48,3 +48,5 @@ export const MovieCredits = () => {
     </>
   );
 };
+
+export default MovieCredits;

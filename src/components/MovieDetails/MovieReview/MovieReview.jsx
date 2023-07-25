@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Ul, Li, H2 } from './MovieReview.styled';
 
-export const MovieReview = () => {
+const MovieReview = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [movieReviews, setMovieReviews] = useState([]);
   const { id } = useParams();
@@ -42,3 +42,5 @@ export const MovieReview = () => {
     </>
   );
 };
+
+export default MovieReview;
